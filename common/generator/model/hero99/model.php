@@ -61,7 +61,9 @@ use yii\db\Expression;
  * @property int $created_by
  * @property int $updated_by
 <?php endif; ?>
+<?php if ($generator->useSoftDelete): ?>
  * @property int $deleted
+<?php endif; ?>
  *
 <?php foreach ($relations as $name => $relation): ?>
  * @property <?= $relation[1] . ($relation[2] ? '[]' : '') . ' $' . lcfirst($name) . "\n" ?>
@@ -141,6 +143,14 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
     public static function find()
     {
         return new <?= $queryClassFullName ?>(get_called_class());
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function softDelete() {
+        $this->deleted = SoftDeletable::DELETED;
+        $this->save();
     }
 <?php endif; ?>
 }

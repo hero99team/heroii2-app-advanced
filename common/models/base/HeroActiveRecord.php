@@ -12,6 +12,12 @@ namespace common\models\base;
 use yii\db\ActiveRecord;
 
 interface SoftDeletable {
+    const NORMAL = 0;
+    const DELETED = 1;
+
+    /**
+     * Changes the `deleted` field to `SoftDeletable::DELETED`.
+     */
     public function softDelete();
 }
 
