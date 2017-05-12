@@ -153,5 +153,13 @@ class <?= $className ?> extends <?= '\\' . ltrim($generator->baseClass, '\\') . 
     {
         return new <?= $queryClassFullName ?>(get_called_class());
     }
+
+    /**
+     * @inheritdoc
+     */
+    public function softDelete() {
+        $this->deleted = SoftDeletable::DELETED;
+        $this->save();
+    }
 <?php endif; ?>
 }
