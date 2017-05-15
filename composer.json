@@ -1,5 +1,6 @@
 {
     "name": "hero99team/heroii2-app-advanced",
+    "version": "0.0.1",
     "description": "Hero99 Yii 2 Advanced Project Template",
     "keywords": ["hero99", "hero99team", "yii2", "framework", "advanced", "project template"],
     "homepage": "http://www.hero99.com.br/",
@@ -9,7 +10,6 @@
         "issues": "https://github.com/hero99team/heroii2-app-advanced/issues?state=open",
         "source": "https://github.com/hero99team/heroii2-app-advanced"
     },
-    "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.6",
